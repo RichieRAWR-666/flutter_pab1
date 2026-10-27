@@ -83,7 +83,6 @@ class DetailScreen extends StatelessWidget {
                 Text(": ${candi.location}"),
               ],
             ),
-            // detailgallery
             Row(
               children: [
                 Icon(Icons.calendar_month, color: Colors.blue),
@@ -102,6 +101,19 @@ class DetailScreen extends StatelessWidget {
                 Text(': ${candi.type}'),
               ],
             ),
+
+            const SizedBox(height: 16),
+            Divider(color: Colors.deepPurple.shade100),
+            const SizedBox(height: 16),
+
+            const Text(
+              'Deskripsi',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 16),
+            Text(candi.description),
+
+            // detailGallery
           ],
         ),
       ),
