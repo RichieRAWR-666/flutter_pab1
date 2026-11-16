@@ -15,6 +15,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
   String userName = 'chieboo';
   int favoriteCandiCount = 6;
 
+void signIn(){
+  setState(() {
+    isSignedIn = true;
+  });
+}
+
+void signOut(){
+  setState(() {
+    isSignedIn=false;
+  });
+}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -109,8 +121,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
     ]),
         SizedBox(height: 4,),
         isSignedIn
-        ? TextButton(onPressed: () {}, child: const Text('Sign Out'))
-        : TextButton(onPressed: () {}, child: const Text('Sign In')),
+        ? TextButton(onPressed: () {signOut();}, child: const Text('Sign Out'))
+        : TextButton(onPressed: () {signIn();}, child: const Text('Sign In')),
 
           //todo 4 profile action 
         ],

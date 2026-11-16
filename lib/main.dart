@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_pab1/models/candi_data.dart';
 import 'package:flutter_pab1/screens/detail_screen.dart';
 import 'package:flutter_pab1/screens/profile_screen.dart';
+import 'package:flutter_pab1/screens/sign_in_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Wisata Candi',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: ProfileScreen(),
+      home: SignInScreen(),
     );
   }
 }
