@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pab1/providers/auth_provider.dart';
+import 'package:flutter_pab1/providers/favorite_provider.dart';
+import 'package:provider/provider.dart';
  
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -29,6 +32,11 @@ void signOut(){
 
   @override
   Widget build(BuildContext context) {
+    final favoriteCount =
+    context.watch<FavoriteProvider>().count;
+    final auth = context.watch<AuthProvider>();
+
+ 
     return Scaffold(
       body: Stack(
     children: [
@@ -120,10 +128,12 @@ void signOut(){
       ),
     ]),
         SizedBox(height: 4,),
-        isSignedIn
-        ? TextButton(onPressed: () {signOut();}, child: const Text('Sign Out'))
-        : TextButton(onPressed: () {signIn();}, child: const Text('Sign In')),
-
+        auth.isSignedIn
+    ? TextButton(
+        onPressed: () =>
+            context.read<AuthProvider>().signOut(),
+        child: const Text('Sign Out'))
+        : TextButton(...) 
           //todo 4 profile action 
         ],
       ),
